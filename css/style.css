@@ -1,3 +1,7 @@
+/** 
+------- New CSS for Coursera Project 
+**/
+
 html {
 	margin: 0;
 	padding: 0;
@@ -12,33 +16,26 @@ body {
     padding: 0;
     }
 
-    header {
-        margin: auto;
-        text-align: center;
-        border: 3px solid green;
-        width: 50%;
-        padding: 5px;
-    }
-    
-#mainDiv {
-    margin: auto;
+header {
+    position: relative;
     text-align: center;
-    border: 3px solid green;
-    width: 50%;
-    padding: 5px;
+    font-size: 180%;
 }
 
-#hobbyList {
-    margin: auto;
+h3 {
+    position: relative;
     text-align: center;
-    border: 3px solid green;
-    width: 50%;
-    padding: 5px;
+    font-size: 150%;
+}
+
+div {
+    border: 0px solid black;
 }
 
 /**----------------
     Links CSS
 ----------------**/
+
 a:link { 
     font-weight: bold; 
     text-decoration: none; 
@@ -52,4 +49,62 @@ a:visited {
 a:hover, a:focus, a:active { 
     text-decoration: underline; 
     color: #9685BA;
+}
+
+/**----------------
+    Media Query CSS
+----------------**/
+
+/* Desktop Screen width at 992px and above */
+@media screen and (min-width: 992px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 5px;
+        grid-template-rows: 4fr
+        }
+        * {box-sizing: border-box;}
+        
+}
+
+/* Tablet Screen width at netweem 768px and 991px inclusively*/
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .column-3 {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-area: third;
+    }
+        
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        column-gap: 10px;
+        row-gap: 5px;
+        grid-template-rows: 4fr;
+        grid-template-areas:
+            "none none"
+            "third third";
+        }
+        
+        * {box-sizing: border-box;}
+    
+
+}
+
+/* Mobile view if width is equal to or less than 767px*/
+@media screen and (max-width: 767px){
+    .container {
+        display: grid;
+        grid-template-columns: 12fr;
+        grid-template-rows: 1fr
+        }
+        * {box-sizing: border-box;}
+        
+        header {
+            position: relative;
+            text-align: center;
+            font-size: 150%;
+        }
 }
